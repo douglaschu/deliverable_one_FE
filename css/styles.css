@@ -1,0 +1,143 @@
+
+/*setting the font*/
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+
+}
+
+/* I have named the div element with the navigation bar "nav." */
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1em;
+}
+
+/* This is the second part of the website. "Nav" and "Box." */
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5em;
+}
+
+/* Hiding the image on mobile display.*/
+#image {
+    display: none;
+}
+
+/* Class for the nav background. */ 
+.gray-background {
+    background-color: #F2F2F2;
+}
+
+/* Set h1 properties */
+h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #20A8B4;
+}
+
+/* Sets h2 properties */
+h2 {
+    font-size: 2 em;
+    font-weight: 600;
+    color: #000
+}
+
+/* Locking the navigation ul to the left border of the screen on mobile display. */
+.nav-links {
+    margin: 0;
+    padding: 0;
+    
+  }
+
+/* Eliminating bullet points for the list items; 
+(trying to) space out the links in the nav bar with margin command. */
+.nav-item {
+    list-style-type: none;
+    margin: 0.5em 0 0.5em 0;
+
+}
+
+/* Turns nav bar links orange on hover. */
+.nav-item:hover {
+    color: #FF5C0F;
+}
+
+/* Turning certain words in h1 and h2 orange for emphasis.*/
+strong {
+    color: #FF5C0F;
+}
+
+/* Button class -- rules for button display. 
+I first wrote them as one class, it seemed like the organized thing to do. 
+But, these rules seem to clash with the nav bar button's properties as part of a list. 
+Maybe it will work as an id instead?*/
+#button {
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    background-color: #20A8B4;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    
+}
+
+/* Hover property for buttons. */
+#button:hover {
+    background-color: #FF5C0F; 
+}
+
+/* Media query for shifting to desktop view. */
+@media (min-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: row;
+        /*flex-wrap: wrap; Not sure what this does.*/
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    /*Aligns page content and image horizontally in a row*/
+    .box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+
+   
+
+    /* Takes the list of nav links and makes it go horizontal, aligned right on desktop view. */
+    .nav-links {
+        float: right;
+        /*display: inline-block;*/
+    }
+
+    .nav-links li {
+        display: inline-block;
+        text-align: right;
+        position: relative;
+        align-items: center;
+        margin: 0.5em;
+    }
+    
+    /* Showing image on desktop keeping it in line with other elements' dimensions. */
+    #image {
+        display: flex;
+        flex-direction: flex-end;
+        /*float: right;*/
+        width: 50%;
+    }
+    
+    /* Making buttons smaller to fit text on desktop. */
+    #button {
+        width: auto;   
+    }
+}
+
