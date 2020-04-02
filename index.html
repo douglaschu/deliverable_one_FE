@@ -2,6 +2,7 @@
 <html>
 <main>
   <head>
+    <!-- Linking CSS stylesheet and Google fonts  -->
     <link rel= "stylesheet" type= "text/css" href="css/styles.css">
     <link rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Roboto">
@@ -9,18 +10,21 @@
   </head>
   
   <body>
-    
-    <nav class="gray-background">
+    <!-- The navigation bar of the page, placed in a class so that CSS will give it a tasteful light gray background -->
+    <nav class="gray-background">      
       <h1>Learn to <strong>Code</strong></h1>
+      <!-- The page navigation bar is organized into a ul -->
       <ul class="nav-links">
         <li class="nav-item">Bootcamps</li>
         <li class="nav-item">Workshops</li>
         <li class="nav-item">Custom Training</li>
         <li class="nav-item">Student Stories</li>
+        <!-- "Contact Us" linke is a button -->
         <li class="button" class="nav-item">Contact Us</li>
       </ul>  
     </nav>
 
+    <!-- The page's content -->
     <div class = "box">
       <div class= "content">
         <h2>Do you think about <strong>learning to code?</strong></h2>
@@ -28,9 +32,10 @@
           <p class="button">Learn More</p>
       </div>
       <!-- <div class= "image">
-
+        This was part of my attempt to place the image in CSS. It would've gone in this empty div wrapper.  
       </div> -->
-      <div class="imagebox">
+      <!-- Placing the image. I guess the div the image was in didn't need a class; I didn't use its class selector in CSS -->
+      <div class="imagebox"> 
         <img class="image" src="assets/code.svg" alt="Two figures holding up a giant magical piece of code between them. One gives you an warm look.">
       </div>
      </div>

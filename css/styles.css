@@ -2,9 +2,7 @@
 /*setting the font*/
 body {
     font-family: 'Roboto', sans-serif;
-    color: #000;
-    
-    
+    color: #000;    
 }
 
 /* I have named the div element with the navigation bar "nav." */
@@ -15,7 +13,7 @@ nav {
     padding-bottom: 0.5em;
 }
 
-/* This is the second part of the website. "Nav" and "Box." */
+/* This is the second part of the website, where the page content is. "Nav" and "Box." */
 .box {
     display: flex;
     flex-direction: column;
@@ -27,20 +25,17 @@ nav {
     background-repeat: no-repeat;
 }
 
-
-
-/* Hiding the image on mobile display (old; used when img was in html) */
+/* Hiding the image on mobile display. */
 .image {
     display: none;
 }
 
-
-/* Class for the nav background. */ 
+/* Class rules for the nav bar background. Gives it that tasteful background color */ 
 .gray-background {
     background-color: #F2F2F2;
 }
 
-/* Set h1 properties */
+/* Sets h1 properties */
 h1 {
     font-size: 2.5em;
     font-weight: 600;
@@ -61,12 +56,10 @@ h2 {
     
   }
 
-/* Eliminating bullet points for the list items; 
-(trying to) space out the links in the nav bar with margin command. */
+/* Eliminating bullet points for the list items; Paragraph spacing for the links in the nav bar using margin command. */
 .nav-item {
     list-style-type: none;
     margin: 0.5em 0 0.5em 0;
-
 }
 
 /* Turns nav bar links orange on hover. */
@@ -79,9 +72,9 @@ strong {
     color: #FF5C0F;
 }
 
-/* Button class -- rules for button display. 
-I first wrote them as one class, it seemed like the organized thing to do. 
-But, these rules seem to clash with the nav bar button's properties as part of a list. 
+/* Button class -- rules for button display. */
+/* I first wrote them as one class, it seemed like the organized thing to do. 
+But, these rules seem to clash with the nav bar button's properties as part of a list. The nav bar button is too big. It has an expanded bottom margin I can't figure out. UPDATE: Heather the coach helped me debug it. It turns out it was a loose </p> tag (yes, just the close tag) in my html. Relief.   
 */
 .button {
     border: none;
@@ -102,9 +95,7 @@ But, these rules seem to clash with the nav bar button's properties as part of a
 
 /* Media query for shifting to desktop view. */
 @media (min-width: 768px) {
-
-    
-    
+        
     nav {
         display: flex;
         flex-direction: row;
@@ -116,7 +107,7 @@ But, these rules seem to clash with the nav bar button's properties as part of a
     /* Takes the list of nav links and makes it go horizontal, aligned right on desktop view. */
     .nav-links {
         float: right;
-        /*display: inline-block;*/
+        /*display: inline-block; (something I tried but seems not to be necessary*/
     }
 
     .nav-links li {
@@ -132,28 +123,24 @@ But, these rules seem to clash with the nav bar button's properties as part of a
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-        
-        
+        align-items: center;    
     }
 
     .content {
         display: block;
         width: auto;
-        flex-shrink: 0;    
+        flex-shrink: 0; /* <--- FLEX-SHRINK: THE MAGIC COMMAND, DISCOVERED AT THE ELEVENTH HOUR, THAT MADE EVERYTHING WORK (this finally solved the issue of the h2 in this div wrapping around the image scaling */   
     }
     
     /* Showing image on desktop keeping it in line with other elements' dimensions. */
     .image {
         display: block;
         width: 60.69%;
-        float: right; 
+        float: right;
+        /*Tried to use CSS to display image without h2 wrapping to new line. I couldn't make this work in time. The image wasn't displaying on desktop view. I had placed it in its own div wrapper but debugging the desktop view showed that the div would have either no dimensions ( 0 x 0 ) or width and 0 height. */ 
         /* background-image: url("../assets/code.svg");
         background-size: cover;
         background-repeat: no-repeat; */
-        /*Tried to use CSS to display image without h2 wrapping to new line. Tried */
-        
-
     }
     
     /* Making buttons smaller to fit text on desktop. */
@@ -162,3 +149,4 @@ But, these rules seem to clash with the nav bar button's properties as part of a
     }
 }
 
+/* We're done. And... breathe. */
